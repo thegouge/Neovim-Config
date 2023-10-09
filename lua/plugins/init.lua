@@ -229,8 +229,7 @@ local default_plugins = {
 
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-telescope/telescope-fzf-native.nvim" },
-    requires = {"nvim-telescope/telescope-fzf-native.nvim", run="make"},
+    dependencies = { "nvim-treesitter/nvim-treesitter", { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
     cmd = "Telescope",
     init = function()
       require("core.utils").load_mappings "telescope"
